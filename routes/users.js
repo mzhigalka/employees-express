@@ -1,19 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
+const { login, register, current } = require("../controllers/users");
+
 // /api/user/login
-router.post("/login", function (req, res, next) {
-  res.send("login");
-});
+router.post("/login", login);
 
 // /api/user/register
-router.post("/register", function (req, res, next) {
-  res.send("register");
-});
+router.post("/register", register);
 
 // /api/user/current
-router.post("/current", function (req, res, next) {
-  res.send("register");
-});
+router.get("/current", current);
 
 module.exports = router;
