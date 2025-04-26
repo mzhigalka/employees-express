@@ -88,8 +88,14 @@ const register = async (req, res) => {
   } else return res.status(400).json({ message: "Failed to create user" });
 };
 
+/**
+ *
+ * @route GET /api/user/current
+ * @desc Current user
+ * @access Private
+ */
 const current = async (req, res) => {
-  res.send("current");
+  res.status(200).json(req.user);
 };
 
 module.exports = {
